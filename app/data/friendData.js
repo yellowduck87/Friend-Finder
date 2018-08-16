@@ -14,7 +14,22 @@ var friendData = [{
         1,
         1
     ]
-},
+},{
+    name: "Donald Duck",
+    photo: "#",
+    survey: [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+    ]
+}
 ]
 
 module.exports = friendData;
