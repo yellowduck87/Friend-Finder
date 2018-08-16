@@ -1,9 +1,20 @@
-var PORT = process.env.PORT || 3000;
 var express = require("express");
 var bodyParser = require("body-parser");
-var path = require("path");
 
 
-app.listen(PORT, function() {
+var app = express();
+
+var PORT = process.env.PORT || 3000;
+
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+app.use(bodyParser.json());
+
+require("../routs/apiRoutes")(app);
+require("../routs/htmlRoutes")(app);
+
+app.listen(PORT, function () {
     console.log("App listening on PORT", PORT)
 });
+
