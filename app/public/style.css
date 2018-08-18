@@ -5,3 +5,55 @@ img {
 body {
     background-image: url("/images/connectwork.png")
 }
+
+.jumbotron {
+    margin-top: 20px;
+    background:  rgba(177, 177, 177, 0.808);
+}
+
+#header {
+    background:  rgba(177, 177, 177, 0.808);
+    text-align: center;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 2px;
+    margin-top: 10px;
+}
+
+#my-form {
+    background: rgba(177, 177, 177, 0.808);
+    padding: 20px;
+    border-radius: 2px;
+}
+
+#api-links {
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    background:  rgba(177, 177, 177, 0.808);
+    padding: 2px;
+    margin-bottom: 10px;
+    border-radius: 2px;
+}
+
+a {
+    color: black ;
+}
+a:visited {
+    color: black;
+}
+a:hover {
+    color: black ;
+}
+a:focus {
+    color: black ;
+}
+a:active {
+    color: black;
+}
+
+.btn-dark {
+    font-size: 20px;
+    color: white !important;
+}
