@@ -177,44 +177,61 @@
         $(".surSubmit").on("click", function () {
                 event.preventDefault();
 
-                var newUser = {
-                    name: $("#name").val(),
-                    photo: $("#photo").val(),
-                    survey: [
-                        parseInt($("#q1").val().charAt(0)),
-                        parseInt($("#q2").val().charAt(0)),
-                        parseInt($("#q3").val().charAt(0)),
-                        parseInt($("#q4").val().charAt(0)),
-                        parseInt($("#q5").val().charAt(0)),
-                        parseInt($("#q6").val().charAt(0)),
-                        parseInt($("#q7").val().charAt(0)),
-                        parseInt($("#q8").val().charAt(0)),
-                        parseInt($("#q9").val().charAt(0)),
-                        parseInt($("#q10").val().charAt(0)),
-                    ]
+                function verifyForm() {
+                    var isValid = true;
+                    $(".form-control").each(function () {
+                        if ($(this).val() === "") {
+                            isValid = false;
+                        }
+                    })
+                    return isValid;
                 }
-                $.ajax({
-                    type: 'post',
-                    url: "/api/friendData",
-                    data: JSON.stringify(newUser),
-                    contentType: 'application/json',
-                    success: function (data, status, xhr) {
-                    
-                        var matchedImg = $("<img>");
-                        matchedImg.addClass("modal-image")
-                        matchedImg.attr("src", data.photo)
+                if (verifyForm()) {
 
-                        $(".modal-body").append(data.name);
-                        $(".modal-body").append(matchedImg);
-                        $("#resultsModal").modal("toggle");
+
+
+                    var newUser = {
+                        name: $("#name").val(),
+                        photo: $("#photo").val(),
+                        survey: [
+                            parseInt($("#q1").val().charAt(0)),
+                            parseInt($("#q2").val().charAt(0)),
+                            parseInt($("#q3").val().charAt(0)),
+                            parseInt($("#q4").val().charAt(0)),
+                            parseInt($("#q5").val().charAt(0)),
+                            parseInt($("#q6").val().charAt(0)),
+                            parseInt($("#q7").val().charAt(0)),
+                            parseInt($("#q8").val().charAt(0)),
+                            parseInt($("#q9").val().charAt(0)),
+                            parseInt($("#q10").val().charAt(0)),
+                        ]
                     }
-                });
-               $("#myForm").reset();
+                    $.ajax({
+                        type: 'post',
+                        url: "/api/friendData",
+                        data: JSON.stringify(newUser),
+                        contentType: 'application/json',
+                        success: function (data, status, xhr) {
+
+                            var matchedImg = $("<img>");
+                            matchedImg.addClass("modal-image")
+                            matchedImg.attr("src", data.photo)
+
+                            $(".modal-body").append(data.name);
+                            $(".modal-body").append(matchedImg);
+                            $("#resultsModal").modal("toggle");
+                            $("#name").val("");
+                            $("#photo").val("");
+                        }
+                    });
+
+                } else {
+                    alert("Please fill out all fields")
+                }
             }
-        
+
 
         )
-
     </script>
 </body>
 

@@ -10,11 +10,11 @@ module.exports = function (app) {
         var user = [];
         var userInput = req.body;
 
-        var survey = req.body.survey;
 
         user.push(userInput);
 
-       
+        var survey = req.body.survey;
+
         var totalSurveyArray = [];
         for (var i = 0; i < friendData.length; i++) {
             var friendSurvey = friendData[i].survey
