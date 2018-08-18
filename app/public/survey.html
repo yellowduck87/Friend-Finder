@@ -21,7 +21,7 @@
     <div class="container">
         <h2>Survey Questions</h2>
         <hr>
-        <form>
+        <form id="myForm">
             <div class="form-group">
                 <h3 class="bold">About You</h3>
                 <label for="name">Name (Required)</label>
@@ -209,8 +209,7 @@
                         $("#resultsModal").modal("toggle");
                     }
                 });
-                $("#name").val("");
-                $("#photo").val("");
+               $("#myForm").reset();
             }
         
 
