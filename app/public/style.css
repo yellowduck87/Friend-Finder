@@ -2,6 +2,6 @@ img {
     max-height: 400px;
 }
 
-background {
-    color: black;
+body {
+    background-image: url("/images/connectwork.png")
 }
