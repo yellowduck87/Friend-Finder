@@ -1,6 +1,6 @@
 var friendData = [{
         name: "Scrooge McDuck",
-        photo: "./images/scrooge.png",
+        photo: "/images/scrooge.png",
         survey: [
             1,
             1,
@@ -15,7 +15,7 @@ var friendData = [{
         ]
     }, {
         name: "Donald Duck",
-        photo: "./images/donald.png",
+        photo: "/images/donald.png",
         survey: [
             2,
             2,
@@ -31,7 +31,7 @@ var friendData = [{
     },
     {
         name: "Daffy Duck",
-        photo: "./images/daffy.png",
+        photo: "/images/daffy.png",
         survey: [
             3, 
             3, 
@@ -47,7 +47,7 @@ var friendData = [{
     },
     {
         name: "Daisy Duck",
-        photo: "./images/daisy.png",
+        photo: "/images/daisy.png",
         survey: [
            4,
            4,
@@ -63,7 +63,7 @@ var friendData = [{
     },
     {
         name: "Heuy Duck",
-        photo: "./images/Huey.png",
+        photo: "/images/Huey.png",
         survey: [
             5,
             5,
